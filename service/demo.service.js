@@ -2,6 +2,7 @@
  * demo的服务
  */
 import BasicService from './BasicService';
+import url from '../config/urlConfig';
 
 class DemoService extends BasicService {
 	
@@ -47,7 +48,7 @@ class DemoService extends BasicService {
 	}
 	
 	viewList() {
-		return this.get(`/admin/meta/objects/m8_sys_application/view`).then(res => {
+		return this.get(url.demoUrl).then(res => {
 			let data = null;
 			if (res) {
 				data = res.data;
