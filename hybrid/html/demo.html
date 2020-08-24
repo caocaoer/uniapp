@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<script>
+			var deviceWidth = parseInt(window.screen.width);  //获取当前设备的屏幕宽度
+		    var deviceScale = deviceWidth / 320;  //得到当前设备屏幕与640之间的比例，之后我们就可以将网页宽度固定为640px
+		    var ua = navigator.userAgent;
+		    //获取当前设备类型（安卓或苹果）
+		    if (/Android (\d+\.\d+)/.test(ua)) {
+		        var version = parseFloat(RegExp.$1);
+		        if (version > 2.3) {
+		            document.write('<meta name="viewport" content="width=320,initial-scale=' + deviceScale + ', minimum-scale = ' + deviceScale + ', maximum-scale = ' + deviceScale + ', target-densitydpi=device-dpi">');
+		        } else {
+		            document.write('<meta name="viewport" content="width=320,initial-scale=0.75,maximum-scale=0.75,minimum-scale=0.75,target-densitydpi=device-dpi" />');
+		        }
+		    } else {
+		        document.write('<meta name="viewport" content="width=320, user-scalable=no">');
+		    }
+		  </script>
+		<meta name="renderer" content="webkit">
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta name="apple-mobile-web-app-title" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			#app {
+				height: 100vh;
+				width: 100vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script type="text/javascript" src="js/demo.0.0.1.js"></script>
+	</body>
+</html>
